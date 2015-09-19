@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app="templateView">
+	<head>
+		<meta charset="utf-8">
+		<title>Mail Blender</title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<script type="text/javascript" src="http://cdn.jsdelivr.net/g/jquery@1,jquery.ui@1.10%28jquery.ui.core.min.js+jquery.ui.widget.min.js+jquery.ui.mouse.min.js+jquery.ui.sortable.min.js%29,angularjs@1.2,angular.ui-sortable"></script>
+		<script src="controllers/templateview.js"></script>
+		<link rel="stylesheet" href="index.css">
+	</head>
+	<body>
+
+		<div class="container">
+
+			<header>
+				<div class="BlenderName">
+					<h1>Mail Blender</h1>
+			</div>
+			<div class="BlenderSlogan">
+				<h2>Email made easy.</h2>
+			</div>
+			</header>
+			<div class="container" ng-controller="templateListController as template">
+					<section class="templateviewport" ui-sortable ng-model="template.directory">
+						<div class="templateview" ng-repeat="tempName in template.directory">
+							<div class="templateviewbanner">
+								<h2>{{tempName.name}}</h2>
+							</div>
+							<div class="menubanner">
+
+								<div ng-click="template.remove($index)" class="white-text">Remove</div>
+
+								<button class="templatemenu">
+									<i class="fa fa-bars" ng-click="openMenu()" id="menu"></i>
+								</button><br>
+
+							</div>
+						</div>
+
+						<div class="templateview">
+							<div class="templateviewbanner">
+								<form name="TempNameForm" ng- ng-submit="template.add()">
+									<input id="tempAddName" type="text" ng-show="true" ng-model="template.directory.name" placeholder="Template Name" />
+								</form>
+								<h2 id="TemplateName" ng-click="template.hideName()" ng-show="false">Add New Template</h2>
+							</div>
+							<h2>{{template.directory.name}}</h2>
+							<button class="plussign" ng-click="template.add()"><i class="fa fa-plus"></i></button>
+						</div>
+					</section>
+				</div>
+				<footer>
+				</footer>
+			</div>
+	</body>
+</html>
