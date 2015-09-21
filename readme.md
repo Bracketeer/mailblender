@@ -1,6 +1,6 @@
 # mailblender
 
-> My polished app
+> a simple email template editor
 
 
 ## Dev
