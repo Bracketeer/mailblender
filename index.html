@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="templateView">
+<html ng-app="app">
 	<head>
 		<meta charset="utf-8">
 		<title>Mail Blender</title>
@@ -7,7 +7,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<script type="text/javascript" src="http://cdn.jsdelivr.net/g/jquery@1,jquery.ui@1.10%28jquery.ui.core.min.js+jquery.ui.widget.min.js+jquery.ui.mouse.min.js+jquery.ui.sortable.min.js%29,angularjs@1.2,angular.ui-sortable"></script>
-		<script src="controllers/templateview.js"></script>
+		<script src="app.js"></script>
+		<script src="Modules/TemplateView/templateView.js"></script>
 		<link rel="stylesheet" href="index.css">
 	</head>
 	<body>
@@ -19,39 +20,51 @@
 					<h1>Mail Blender</h1>
 			</div>
 			<div class="BlenderSlogan">
-				<h2>Email made easy.</h2>
+				<h2>Email building for the masses.</h2>
 			</div>
+
 			</header>
+
 			<div class="container" ng-controller="templateListController as template">
-					<section class="templateviewport" ui-sortable ng-model="template.directory">
-						<div class="templateview" ng-repeat="tempName in template.directory">
+				<div class="searchbar-container">
+		<input ng-model="templates.name" type="text" placeholder="Search" class="searchbar"/>
+		</div>
+
+					<section class="templateviewport" ui-sortable ng-model="templates">
+						<div class="templateview" ng-repeat="tempName in templates">
 							<div class="templateviewbanner">
 								<h2>{{tempName.name}}</h2>
 							</div>
-							<div class="menubanner">
-
-								<div ng-click="template.remove($index)" class="white-text">Remove</div>
-
-								<button class="templatemenu">
-									<i class="fa fa-bars" ng-click="openMenu()" id="menu"></i>
+							<div class="menubanner" id="menu">
+								<button ng-click="menuShow = !menuShow" class="templatemenu">
+									<i class="fa fa-bars"></i>
 								</button>
+									<div ng-click="RemoveShow = !RemoveShow" ng-show="menuShow" class="white-text">
+
+										<span ng-hide='RemoveShow'>Remove</span>
+										<span ng-show='RemoveShow'>Are you sure you want to delete this template?</span>
+
+									</div>
+									<button class="remove-btn" ng-click="remove($index)" ng-show="RemoveShow" class="white-text">Remove</button>
+									<button class="cancel-btn" ng-click="RemoveShow = !RemoveShow" ng-show="RemoveShow" class="white-text">Cancel</button>
 							</div>
 						</div>
 
 						<div class="templateview">
 							<div class="templateviewbanner">
-								<form name="TempNameForm" ng- ng-submit="template.add()">
-									<input id="tempAddName" type="text" ng-show="true" ng-model="template.directory.name" placeholder="Template Name" />
+								<form name="TempNameForm" ng-submit="add()">
+									<input id="tempAddName" type="text" ng-show="true" ng-model="templates.name" placeholder="Template Name" />
 								</form>
-								<h2 id="TemplateName" ng-click="template.hideName()" ng-show="false">Add New Template</h2>
+								<h2 id="TemplateName" ng-click="hideName()" ng-show="false">Add New Template</h2>
 							</div>
-							<h2>{{template.directory.name}}</h2>
-							<button class="plussign" ng-click="template.add()"><i class="fa fa-plus"></i></button>
+							<button class="plussign" ng-click="add()"><i class="fa fa-plus"></i></button>
 						</div>
 					</section>
-				</div>
 				<footer>
+
 				</footer>
 			</div>
+
+
 	</body>
 </html>

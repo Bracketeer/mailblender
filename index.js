@@ -46,7 +46,3 @@ app.on('activate-with-no-open-windows', function () {
 app.on('ready', function () {
 	mainWindow = createMainWindow();
 });
-
-app.on('ready', function () {
-    require("electron-template-menu")();
-});
