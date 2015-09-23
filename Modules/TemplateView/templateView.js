@@ -6,7 +6,7 @@ angular.module('app')
   $scope.templates = data;
 });
 
-  $scope.orderProp = 'client';
+  $scope.orderProp = "name";
 
 //Add a template
   $scope.add = function(){

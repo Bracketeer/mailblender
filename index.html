@@ -9,6 +9,8 @@
 		<script type="text/javascript" src="http://cdn.jsdelivr.net/g/jquery@1,jquery.ui@1.10%28jquery.ui.core.min.js+jquery.ui.widget.min.js+jquery.ui.mouse.min.js+jquery.ui.sortable.min.js%29,angularjs@1.2,angular.ui-sortable"></script>
 		<script src="app.js"></script>
 		<script src="Modules/TemplateView/templateView.js"></script>
+		<script src="node_modules/angular-animate/angular-animate.min.js"></script>
+		</script>
 		<link rel="stylesheet" href="index.css">
 	</head>
 	<body>
@@ -29,10 +31,35 @@
 				<div class="searchbar-container">
 		<input ng-model="searchBox" type="text" placeholder="Search" class="searchbar"/>
 		<select ng-model="orderProp">
+			<option value="noSort">No Sort</option>
   <option value="name">Alphabetical</option>
   <option value="age">Client</option>
 	<option value="date">Date added</option>
 </select>
+<input type="radio"
+       ng-model="orderProp"
+       value="name"
+       [name="string"]
+       [ng-change="string"]
+       ng-value="name">
+			 <input type="radio"
+			        ng-model="orderProp"
+			        value="Client"
+			        [name="string"]
+			        [ng-change="string"]
+			        ng-value="Client">
+							<input type="radio"
+							       ng-model="orderProp"
+							       value="name"
+							       [name="string"]
+							       [ng-change="string"]
+							       ng-value="name">
+										 <input type="radio"
+										        ng-model="orderProp"
+										        value="name"
+										        [name="string"]
+										        [ng-change="string"]
+										        ng-value="name">
 		</div>
 
 					<section class="templateviewport" ui-sortable ng-model="templates">
@@ -54,6 +81,7 @@
 									<button class="remove-btn" ng-click="remove($index)" ng-show="RemoveShow" class="white-text">Remove</button>
 									<button class="cancel-btn" ng-click="RemoveShow = !RemoveShow" ng-show="RemoveShow" class="white-text">Cancel</button>
 							</div>
+							<img class="template-thumb" ng-src="{{tempName.imageURL}}">
 						</div>
 
 						<div class="templateview">

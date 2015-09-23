@@ -1,2 +1,2 @@
-angular.module('app', ['ui.sortable']);
+angular.module('app', ['ui.sortable', 'ngAnimate']);
 var fs = require('fs');
