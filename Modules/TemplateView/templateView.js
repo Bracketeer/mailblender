@@ -1,4 +1,5 @@
 angular.module('app')
+
 .controller('templateListCtrl', function($scope, $http){
 
   $http.get('data/data.json').success(function(data){
@@ -7,6 +8,7 @@ angular.module('app')
 
   $scope.orderProp = 'client';
 
+//Add a template
   $scope.add = function(){
 
     var date = new Date();
@@ -19,6 +21,12 @@ angular.module('app')
           date: date
         }
       );
+
+      fs.writeFile('mailblender/data/data.json', angular.toJson($scope.templates, 4), function(err){
+        if (err) throw err;
+        console.log('files written');
+      });
+
       console.log($scope.templates.length);
       $scope.templates.name = null;
       console.table($scope.templates);
@@ -27,15 +35,20 @@ angular.module('app')
       alert("Please add a title to your template!")
     }
   };
+//Remove Template
+  $scope.remove = function(index){
+    $scope.templates.splice(index, 1);
+    fs.writeFile('mailblender/data/data.json', angular.toJson($scope.templates, 4), function(err){
+      if (err) throw err;
+      console.log('files written');
+    });
+  };
 
   $scope.openMenu = function (menuButton){
 
     var menuShow = true;
   };
 
-    $scope.remove = function(index){
-      $scope.templates.splice(index, 1);
-      console.table($scope.templates);
-    };
+
 
 });

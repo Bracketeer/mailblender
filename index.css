@@ -52,8 +52,8 @@ header {
 .templateviewport{
 	height: 300px;
 	display: flex;
-	flex-flow: flex-start;
-	justify-content: space-between;
+	flex-flow: wrap;
+	justify-content: space-around;
 }
 
 .templateviewbanner{
