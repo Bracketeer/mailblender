@@ -2,6 +2,8 @@
 const app = require('app');
 const BrowserWindow = require('browser-window');
 
+var fs = require('fs');
+
 // report crashes to the Electron project
 require('crash-reporter').start();
 

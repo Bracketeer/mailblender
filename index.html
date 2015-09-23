@@ -25,15 +25,21 @@
 
 			</header>
 
-			<div class="container" ng-controller="templateListController as template">
+			<div class="container" ng-controller="templateListCtrl as template">
 				<div class="searchbar-container">
-		<input ng-model="templates.name" type="text" placeholder="Search" class="searchbar"/>
+		<input ng-model="searchBox" type="text" placeholder="Search" class="searchbar"/>
+		<select ng-model="orderProp">
+  <option value="name">Alphabetical</option>
+  <option value="age">Client</option>
+	<option value="date">Date added</option>
+</select>
 		</div>
 
 					<section class="templateviewport" ui-sortable ng-model="templates">
-						<div class="templateview" ng-repeat="tempName in templates">
+						<div class="templateview" ng-repeat="tempName in templates | filter:searchBox | orderBy:orderProp">
 							<div class="templateviewbanner">
 								<h2>{{tempName.name}}</h2>
+								<span class="white-text">{{tempName.client}}</span>
 							</div>
 							<div class="menubanner" id="menu">
 								<button ng-click="menuShow = !menuShow" class="templatemenu">
