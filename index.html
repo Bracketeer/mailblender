@@ -10,8 +10,9 @@
 		<script src="app.js"></script>
 		<script src="Modules/TemplateView/templateView.js"></script>
 		<script src="node_modules/angular-animate/angular-animate.min.js"></script>
+		<script src="node_modules/angular-ui-bootstrap/ui-bootstrap.min.js"></script>
 		</script>
-		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="css/index.css">
 	</head>
 	<body>
 
@@ -20,48 +21,14 @@
 			<header>
 				<div class="BlenderName">
 					<h1>Mail Blender</h1>
+					<h3>Email building for the masses.</h3>
 			</div>
-			<div class="BlenderSlogan">
-				<h2>Email building for the masses.</h2>
+			<div class="searchbar-container">
+				<input ng-model="searchBox" type="text" placeholder="Search" class="searchbar"/>
 			</div>
-
 			</header>
 
 			<div class="container" ng-controller="templateListCtrl as template">
-				<div class="searchbar-container">
-		<input ng-model="searchBox" type="text" placeholder="Search" class="searchbar"/>
-		<select ng-model="orderProp">
-			<option value="noSort">No Sort</option>
-  <option value="name">Alphabetical</option>
-  <option value="age">Client</option>
-	<option value="date">Date added</option>
-</select>
-<input type="radio"
-       ng-model="orderProp"
-       value="name"
-       [name="string"]
-       [ng-change="string"]
-       ng-value="name">
-			 <input type="radio"
-			        ng-model="orderProp"
-			        value="Client"
-			        [name="string"]
-			        [ng-change="string"]
-			        ng-value="Client">
-							<input type="radio"
-							       ng-model="orderProp"
-							       value="name"
-							       [name="string"]
-							       [ng-change="string"]
-							       ng-value="name">
-										 <input type="radio"
-										        ng-model="orderProp"
-										        value="name"
-										        [name="string"]
-										        [ng-change="string"]
-										        ng-value="name">
-		</div>
-
 					<section class="templateviewport" ui-sortable ng-model="templates">
 						<div class="templateview" ng-repeat="tempName in templates | filter:searchBox | orderBy:orderProp">
 							<div class="templateviewbanner">

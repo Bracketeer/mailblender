@@ -8,13 +8,16 @@ body {
 header {
 	position: fixed;
 	width: 100%;
-	height: 60px;
+
 	left: 0;
 	top: 0;
 	margin-left: 0;
 	text-align: left;
 	background: #206090;
 	z-index: 3;
+	display: flex;
+	flex-flow: wrap;
+	justify-content: space-between;
 	/*box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);*/
 }
 
@@ -26,21 +29,18 @@ header {
 	color: #ffffff;
 	padding-top: 8px;
 	padding-left: 30px;
-	display: inline-block;
-	float: left;
 }
-
-.BlenderSlogan h2 {
+.BlenderName h3 {
 	font-family: 'Helvetica Neue', Helvetica, sans-serif;
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 100;
 	margin: 0;
-	padding-right: 10px;
-	padding-top: 20px;
 	color: #ffffff;
-	display: inline-block;
-	float: right;
+	padding-bottom: 8px;
+	padding-left: 30px;
+	text-align: center;
 }
+
 .templateview{
 	margin: 20px;
 	width: 225px;
@@ -54,7 +54,8 @@ header {
 	height: 300px;
 	display: flex;
 	flex-flow: wrap;
-	justify-content: space-around;
+	justify-content: center;
+	/*align-content: center;*/
 }
 
 .templateviewbanner{
@@ -106,8 +107,8 @@ input{
 }
 
 .container{
-	margin-top: 32px;
-	display: flex;
+	margin-top: 50px;
+	display: inline-flex;
 	flex-flow: wrap;
 	justify-content: space-around;
 }
@@ -198,23 +199,25 @@ input{
 		background: #e3656c;
 }
 .searchbar-container{
-	width: 100%;
-	height: 50px;
-	margin-top: 30px;
+	width: 300px;
+		display: flex;
+	align-items: center;
 }
 .searchbar{
-	background: #dddddd;
+	background: #2775a8;
 	border: 0px;
-	padding: 10px;
 	margin: 10px;
-	width: 100%;
-	color: #000;
-	max-width: 300px;
-	display:inline-block;
-	height: 25px;
+	color: #fff;
+	height: 20px;
+	padding:10px 20px;
+	border-radius: 20px;
+	outline: 0;
+	display: flex;
+	align-items: center;
+
 }
 .searchbar::-webkit-input-placeholder {
-   color: #000;
+   color: #fff;
 }
 .template-thumb{
 	width: 225px;

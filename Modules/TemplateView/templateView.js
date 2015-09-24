@@ -6,7 +6,6 @@ angular.module('app')
   $scope.templates = data;
 });
 
-  $scope.orderProp = "name";
 
 //Add a template
   $scope.add = function(){
@@ -48,6 +47,7 @@ angular.module('app')
 
     var menuShow = true;
   };
+
 
 
 
