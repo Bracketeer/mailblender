@@ -1,0 +1,11 @@
+<div class="modal-box" ng-controller="ModalInstanceCtrl">
+    <h1>Hello World</h1>
+        <form name="TempNameForm" ng-submit="add()">
+          <input id="tempAddName" type="text" ng-show="true" ng-model="templates.name" placeholder="Template Name" />
+          <input id="tempAddClient" type="text" ng-show="true" ng-model="templates.client" placeholder="Client Name" />
+          <input id="tempAddCreator" type="text" ng-show="true" ng-model="templates.creator" placeholder="Creator Name" />
+          <button type="submit">Submit</button>
+        </form>
+        <h2 id="TemplateName" ng-click="hideName()" ng-show="false">Add New Template</h2>
+      <button ng-click="cancel()">cancel</button>
+</div>

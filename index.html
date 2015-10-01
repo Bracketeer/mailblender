@@ -6,17 +6,20 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-		<script type="text/javascript" src="http://cdn.jsdelivr.net/g/jquery@1,jquery.ui@1.10%28jquery.ui.core.min.js+jquery.ui.widget.min.js+jquery.ui.mouse.min.js+jquery.ui.sortable.min.js%29,angularjs@1.2,angular.ui-sortable"></script>
+
+
+		<script src="bower_components/angular/angular.js"></script>
 		<script src="app.js"></script>
-		<script src="Modules/TemplateView/templateView.js"></script>
 		<script src="node_modules/angular-animate/angular-animate.min.js"></script>
-		<script src="node_modules/angular-ui-bootstrap/ui-bootstrap.min.js"></script>
-		</script>
+
+		<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+		<script src="Modules/TemplateView/templateView.js"></script>
+		<link href="partials/TemplateModal.html">
 		<link rel="stylesheet" href="css/index.css">
 	</head>
 	<body>
 
-		<div class="container">
+		<div class="container" ng-controller="templateListCtrl as template">
 
 			<header>
 				<div class="BlenderName">
@@ -26,14 +29,16 @@
 			<div class="searchbar-container">
 				<input ng-model="searchBox" type="text" placeholder="Search" class="searchbar"/>
 			</div>
+			<div class="nav-bar"><button class="add-template" ng-click="open()"><span="nav-text">New Template</span></button></div>
 			</header>
 
-			<div class="container" ng-controller="templateListCtrl as template">
-					<section class="templateviewport" ui-sortable ng-model="templates">
-						<div class="templateview" ng-repeat="tempName in templates | filter:searchBox | orderBy:orderProp">
+			<div class="container">
+					<section class="templateviewport" ng-model="templates">
+						<div class="templateview" ng-repeat="tempName in templates | filter:searchBox">
 							<div class="templateviewbanner">
 								<h2>{{tempName.name}}</h2>
 								<span class="white-text">{{tempName.client}}</span>
+								<span class="white-text">{{tempName.creator}}</span>
 							</div>
 							<div class="menubanner" id="menu">
 								<button ng-click="menuShow = !menuShow" class="templatemenu">
@@ -50,18 +55,9 @@
 							</div>
 							<img class="template-thumb" ng-src="{{tempName.imageURL}}">
 						</div>
-
-						<div class="templateview">
-							<div class="templateviewbanner">
-								<form name="TempNameForm" ng-submit="add()">
-									<input id="tempAddName" type="text" ng-show="true" ng-model="templates.name" placeholder="Template Name" />
-								</form>
-								<h2 id="TemplateName" ng-click="hideName()" ng-show="false">Add New Template</h2>
-							</div>
-							<button class="plussign" ng-click="add()"><i class="fa fa-plus"></i></button>
-						</div>
 					</section>
 				<footer>
+
 
 				</footer>
 			</div>

@@ -18,7 +18,7 @@ header {
 	display: flex;
 	flex-flow: wrap;
 	justify-content: space-between;
-	/*box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);*/
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .BlenderName h1 {
@@ -107,7 +107,7 @@ input{
 }
 
 .container{
-	margin-top: 50px;
+	margin-top: 65px;
 	display: inline-flex;
 	flex-flow: wrap;
 	justify-content: space-around;
@@ -118,6 +118,7 @@ input{
 		-moz-transition: .3s ease-in-out;
 		-o-transition: .3s ease-in-out;
 		transition: .3s ease-in-out;
+			font-size: 30px;
 }
 .fa-plus:hover{
 	-webkit-transform: scale(1.2);
@@ -222,4 +223,39 @@ input{
 .template-thumb{
 	width: 225px;
 	height: 300px;
+}
+.nav-bar{
+	background: #2775a8;
+	width: 100%;
+	color: #fff;
+	padding: 5px 10px;
+}
+.add-template{
+	background: none;
+	border: 0;
+	color: #fff;
+	outline: 0;
+}
+.nav-text{
+	font-size: 20px;
+}
+.modal-window {
+	position: fixed;
+	z-index: 5;
+	width: 100%;
+	top: 0;
+	background: rgba(0, 0, 0, .5);
+	height: 1000px;
+}
+.modal-box{
+	position: fixed;
+	z-index: 6;
+	margin-left: 10%;
+	margin-right: 10%;
+	display: block;
+	top: 130px;
+	width: 80%;
+	background: #fff;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+	padding: 10px;
 }

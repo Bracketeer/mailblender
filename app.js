@@ -1,2 +1,3 @@
-angular.module('app', ['ui.sortable', 'ngAnimate']);
+angular.module('app', ['ngAnimate', 'ui.bootstrap']);
 var fs = require('fs');
+var uibs = require('angular-ui-bootstrap');
