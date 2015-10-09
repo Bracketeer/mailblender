@@ -1,3 +1,3 @@
 angular.module('app', ['ngAnimate', 'ui.bootstrap']);
 var fs = require('fs');
-var uibs = require('angular-ui-bootstrap');
+var uibs = require('angular-bootstrap');

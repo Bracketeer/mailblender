@@ -29,8 +29,7 @@
   "dependencies": {
     "angular-modal-service": "^0.6.9",
     "angular-ui-sortable": "^0.13.4",
-    "electron-debug": "^0.1.1",
-    "google-auth-library": "^0.9.6"
+    "electron-debug": "^0.1.1"
   },
   "devDependencies": {
     "electron-packager": "^5.0.0",
