@@ -1,9 +1,7 @@
-angular.module('app')
-
-.controller('templateListCtrl', function($scope, $http, $modal, $log){
+angular.module('app', ['ngAnimate', 'ui.bootstrap']).controller('templateListCtrl', function($scope, $http){
 
 
-  $http.get('data/data.json').success(function(data){
+  $http.get('lib/data/data.json').success(function(data){
   $scope.templates = data;
 });
 
@@ -55,53 +53,5 @@ angular.module('app')
     var menuShow = true;
   };
 
-
-//Modal Controllers
-
-  $scope.animationsEnabled = true;
-
-  $scope.open = function (size) {
-
-    var modalInstance = $modal.open({
-      animation: $scope.animationsEnabled,
-      templateUrl: 'partials/TemplateModal.html',
-      controller: 'ModalInstanceCtrl',
-      size: size,
-      resolve: {
-        templates: function () {
-          return $scope.templates;
-        }
-      }
-    });
-
-    modalInstance.result.then(function (data) {
-      $scope.templates = data;
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
-    });
-  };
-
-});
-
-// Please note that $modalInstance represents a modal window (instance) dependency.
-// It is not the same as the $modal service used above.
-
-angular.module('app').controller('ModalInstanceCtrl', function ($scope, $http, $modalInstance, templates) {
-
-var date = new Date();
-
-$scope.templates.push({
-  name: $scope.templates.name,
-  client: $scope.templates.client,
-  creator: $scope.templates.creator,
-  date: date
-});
-
-  $scope.ok = function () {
-    $modalInstance.close($scope.templates);
-  };
-
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
+$scope.templateViewClass = true;
 });

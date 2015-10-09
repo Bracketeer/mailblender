@@ -4,15 +4,12 @@
 		<meta charset="utf-8">
 		<title>Mail Blender</title>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-
+		<script src="bower_components/jquery/dist/jquery.js"></script>
 		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-animate/angular-animate.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="bower_components/angular-resource/angular-resource.js"></script>
 		<script src="app.js"></script>
-		<script src="node_modules/angular-animate/angular-animate.min.js"></script>
-
-		<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 		<script src="Modules/TemplateView/templateView.js"></script>
 		<link href="partials/TemplateModal.html">
 		<link rel="stylesheet" href="css/index.css">
@@ -33,12 +30,12 @@
 			</header>
 
 			<div class="container">
-					<section class="templateviewport" ng-model="templates">
-						<div class="templateview" ng-repeat="tempName in templates | filter:searchBox">
+					<section class="templateviewport view-frame" ng-model="templates">
+						<div class="templateview" ng-view ng-repeat="template in templates | filter:searchBox">
 							<div class="templateviewbanner">
-								<h2>{{tempName.name}}</h2>
-								<span class="white-text">{{tempName.client}}</span>
-								<span class="white-text">{{tempName.creator}}</span>
+								<h2>{{template.name}}</h2>
+								<span class="white-text">{{template.client}}</span>
+								<span class="white-text">{{template.creator}}</span>
 							</div>
 							<div class="menubanner" id="menu">
 								<button ng-click="menuShow = !menuShow" class="templatemenu">
@@ -53,9 +50,10 @@
 									<button class="remove-btn" ng-click="remove($index)" ng-show="RemoveShow" class="white-text">Remove</button>
 									<button class="cancel-btn" ng-click="RemoveShow = !RemoveShow" ng-show="RemoveShow" class="white-text">Cancel</button>
 							</div>
-							<img class="template-thumb" ng-src="{{tempName.imageURL}}">
+							<img class="template-thumb" ng-src="{{template.imageURL}}">
 						</div>
 					</section>
+
 				<footer>
 
 
