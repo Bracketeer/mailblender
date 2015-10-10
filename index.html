@@ -9,10 +9,11 @@
 		<script src="bower_components/angular-animate/angular-animate.js"></script>
 		<script src="bower_components/angular-route/angular-route.js"></script>
 		<script src="bower_components/angular-resource/angular-resource.js"></script>
+		<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 		<script src="app.js"></script>
 		<script src="Modules/TemplateView/templateView.js"></script>
-		<link href="partials/TemplateModal.html">
-		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="stylus/main.css">
+		<link rel="stylesheet" href="bower_components\font-awesome\css\font-awesome.min.css"
 	</head>
 	<body>
 
@@ -24,7 +25,8 @@
 					<h3>Email building for the masses.</h3>
 			</div>
 			<div class="searchbar-container">
-				<input ng-model="searchBox" type="text" placeholder="Search" class="searchbar"/>
+				<i class="fa fa-search"></i>
+				<input ng-model="searchBox" type="text" placeholder="&#128269; Search" class="searchbar"/>
 			</div>
 			<div class="nav-bar"><button class="add-template" ng-click="open()"><span="nav-text">New Template</span></button></div>
 			</header>

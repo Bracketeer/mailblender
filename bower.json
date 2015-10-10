@@ -29,5 +29,8 @@
     "angular-route": "1.4.x",
     "bootstrap": "~3.1.1",
     "ngAnimate": "*"
+  },
+  "devDependencies": {
+    "font-awesome": "~4.4.0"
   }
 }
