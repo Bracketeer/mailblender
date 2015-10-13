@@ -1,19 +1,26 @@
+$dark = #404040
+$brand = #505050
+$brand2 = #046c60
+$light = #e3e4e8
+
 html,
 body {
 	padding: 0;
 	margin: 0;
 	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	color $dark
+	background-color $light
 }
 
-header {
+.header {
 	position: fixed;
 	width: 100%;
-
 	left: 0;
 	top: 0;
 	margin-left: 0;
 	text-align: left;
-	background: #206090;
+	background: darken($dark, 5%)
+	color: $light
 	z-index: 3;
 	display: flex;
 	flex-flow: wrap;
@@ -26,16 +33,16 @@ header {
 	font-size: 40px;
 	font-weight: 100;
 	margin: 0;
-	color: #ffffff;
+	color: $light;
 	padding-top: 8px;
 	padding-left: 30px;
 }
-.BlenderName h3 {
+.BlenderName h2 {
 	font-family: 'Helvetica Neue', Helvetica, sans-serif;
 	font-size: 16px;
 	font-weight: 100;
 	margin: 0;
-	color: #ffffff;
+	color: $brand;
 	padding-bottom: 8px;
 	padding-left: 30px;
 	text-align: center;
@@ -45,7 +52,7 @@ header {
 	width: 225px;
 	height: 375px;
 	background: #fff;
-	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 0px 10px 2px alpha(black, 70%)
 	margin: 15px;
 }
 
@@ -65,7 +72,7 @@ header {
 	padding-bottom: 5px;
 	position: relative;
 	opacity: 1;
-	background: #de4d53;
+	background: $brand;
 }
 input{
 	margin-left: 8px;
@@ -74,7 +81,7 @@ input{
 	font-family: 'Helvetica Neue', Helvetica, sans-serif;
 	font-size: 16px;
 	font-weight: 200;
-	background: #cc474c;
+	background:lighten($dark, 5%);
 	border: 0;
 	color: #fff;
 }
@@ -88,18 +95,8 @@ input{
 	margin: 0;
 	padding: 10px;
 	color: #FFF;
+	// text-shadow 0 0 2px black
 	text-align: left;
-}
-
-.plussign {
-	background: none;
-	border: 0;
-	width: 225px;
-	height: 250px;
-	color: #fff;
-	font-size: 40px;
-	top: 135px;
-	outline: 0;
 }
 
 .container{
@@ -112,20 +109,6 @@ input{
 	max-width: 1020px;
 }
 
-.fa-plus{
-	-webkit-transition: .3s ease-in-out;
-		-moz-transition: .3s ease-in-out;
-		-o-transition: .3s ease-in-out;
-		transition: .3s ease-in-out;
-			font-size: 30px;
-}
-.fa-plus:hover{
-	-webkit-transform: scale(1.2);
-	    -moz-transform: scale(1.2);
-	    -o-transform: scale(1.2);
-	    -ms-transform: scale(1.2);
-	    transform: scale(1.2);
-		}
 .templatemenu{
 	color: #fff;
 	outline: 0;
@@ -138,30 +121,24 @@ input{
 		transition: .15s ease-in-out;
 }
 .menubanner{
-	background: #cc474c;
+	background: darken($brand2, 5%);
 	width: 225px;
 	height: auto;
 	overflow: hidden;
-	/*-webkit-transform: height 2s ease-in-out, visibility 1s linear;
+	-webkit-transform: height 2s ease-in-out, visibility 1s linear;
 	-moz-transform: height 2s ease-in-out, visibility 1s linear;
 	-o-transform: height 2s ease-in-out, visibility 1s linear;
 	-ms-transform: height 2s ease-in-out, visibility 1s linear;
 	transform: height 2s ease-in-out, visibility 1s linear;
 	z-index: 2;
-	position: absolute;*/
+	position: absolute;
 }
 .menubanneropen{
 	background: #cc474c;
 	width: 100%;
-	max-height:250px;
+	max-height: 225px;
+}
 
-}
-.white-text{
-	color: #fff;
-	font-family: 'Helvetica Neue', Helvetica, sans-serif;
-	font-weight: 200;
-	padding: 10px 15px;
-}
 .remove-btn{
 	background: none;
 	border: 1px solid #fff;
@@ -186,7 +163,7 @@ input{
 	border-radius: 20px;
 	margin:5px;
 	padding:10px 20px;
-	color: #fff;
+	color: $light;
 	font-family: 'Helvetica Neue', Helvetica, sans-serif;
 	font-weight: 200;
 	font-size: 16px;
@@ -200,40 +177,47 @@ input{
 }
 .searchbar-container{
 	width: 300px;
-		display: flex;
-	align-items: center;
+	height: 70px;
+	display: flex;
+	align-items: right;
 }
+
 .searchbar{
-	background: #2775a8;
 	border: 0px;
 	margin: 10px;
-	color: #fff;
+	color: $light;
 	padding:10px 20px;
 	border-radius: 20px;
 	outline: 0;
 	display: flex;
 	align-items: center;
+}
 
-}
 .searchbar::-webkit-input-placeholder {
-   color: #fff;
+   color: $light;
 }
+
 .template-thumb{
 	width: 225px;
 	height: 300px;
+	background: $light
 }
+
 .nav-bar{
-	background: #2775a8;
+	background: $brand2;
 	width: 100%;
 	color: #fff;
 	padding: 5px 10px;
+	box-shadow inset 0px 4px 0px -2px $brand
 }
+
 .add-template{
 	background: none;
 	border: 0;
 	color: #fff;
 	outline: 0;
 }
+
 .nav-text{
 	font-size: 20px;
 }
@@ -287,7 +271,8 @@ input{
   position: absolute;
   top: 25%;
   left: 0;
-  right: 0width;
+  right: 0
+	width;
 }
 .view-frame.ng-move,
 .view-frame.ng-enter {

@@ -1,6 +1,6 @@
-$dark = #323232
-$brand = #FF6776
-$brand2 = #23A798
+$dark = #ffffff
+$brand = #157987
+$brand2 = #878787
 
 html,
 body {
@@ -148,13 +148,13 @@ input{
 	width: 225px;
 	height: auto;
 	overflow: hidden;
-	/*-webkit-transform: height 2s ease-in-out, visibility 1s linear;
+	-webkit-transform: height 2s ease-in-out, visibility 1s linear;
 	-moz-transform: height 2s ease-in-out, visibility 1s linear;
 	-o-transform: height 2s ease-in-out, visibility 1s linear;
 	-ms-transform: height 2s ease-in-out, visibility 1s linear;
 	transform: height 2s ease-in-out, visibility 1s linear;
 	z-index: 2;
-	position: absolute;*/
+	position: absolute;
 }
 .menubanneropen{
 	background: #cc474c;
@@ -198,16 +198,16 @@ input{
 	font-weight: 200;
 	font-size: 16px;
 	-webkit-transition: .5s ease-in-out;
-		-moz-transition: .5s ease-in-out;
-		-o-transition: .5s ease-in-out;
-		transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
 }
 .cancel-btn:hover{
 		background: #e3656c;
 }
 .searchbar-container{
 	width: 300px;
-		display: flex;
+	display: flex;
 	align-items: center;
 }
 .searchbar{
@@ -221,15 +221,17 @@ input{
 	outline: 0;
 	display: flex;
 	align-items: center;
+}
 
-}
 .searchbar::-webkit-input-placeholder {
-   color: $brand;
+   color: #fff;
 }
+
 .template-thumb{
 	width: 225px;
 	height: 300px;
 }
+
 .nav-bar{
 	background: $brand2;
 	width: 100%;
@@ -253,8 +255,8 @@ input{
 .templateview.ng-enter,
 .templateview.ng-leave,
 .templateview.ng-move {
-  -webkit-transition: 0.5s ease all;
-  -moz-transition: 0.5s ease all;
+-webkit-transition: 0.5s ease all;
+-moz-transition: 0.5s ease all;
   -o-transition: 0.5s ease all;
   transition: 0.5s ease all;
 }

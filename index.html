@@ -1,9 +1,65 @@
 <!doctype html>
 <html ng-app="app">
+
 	<head>
 		<meta charset="utf-8">
 		<title>Mail Blender</title>
+		<link rel="stylesheet" href="lib/styles/stylus/main.css">
+		<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+	</head>
 
+		<body>
+			<!-- Header Section -->
+			<div class="header">
+
+				<div class="BlenderName">
+					<h1 contenteditable="true">Mail Blender</h1>
+					<h3>Email building for the masses.</h3>
+				</div>
+
+				<div class="searchbar-container">
+					<input ng-model="searchBox" type="text" placeholder="&#128269; Search" class="searchbar"/>
+				</div>
+
+				<div class="nav-bar"><button class="add-template" ng-click="open()">
+					<span="nav-text">New Template</span>
+			</div>
+		</div>
+
+		<!-- Main Content Container -->
+		<div class="container" ng-controller="templateListCtrl as template">
+
+			<!-- Template Card -->
+			<div class="templateviewport view-frame" ng-model="templates">
+
+				<div class="templateview" ng-view ng-repeat="template in templates | filter:searchBox">
+							<div class="templateviewbanner">
+								<h2>{{template.name}}</h2>
+								<span>{{template.client}}</span>
+								<span>{{template.creator}}</span>
+							</div>
+
+							<div class="menubanner" id="menu">
+
+								<button ng-click="menuShow = !menuShow" class="templatemenu">
+									<i class="fa fa-bars"></i>
+								</button>
+
+									<div ng-click="RemoveShow = !RemoveShow" ng-show="menuShow" class="white-text">
+
+										<span ng-hide='RemoveShow'>Remove</span>
+										<span ng-show='RemoveShow'>Are you sure you want to delete this template?</span>
+
+									</div>
+
+									<button class="remove-btn" ng-click="remove($index)" ng-show="RemoveShow" class="white-text">Remove</button>
+									<button class="cancel-btn" ng-click="RemoveShow = !RemoveShow" ng-show="RemoveShow" class="white-text">Cancel</button>
+
+							</div>
+							<img class="template-thumb" ng-src="{{template.imageURL}}">
+						</div>
+					</div>
+</div>
 		<script src="bower_components/jquery/dist/jquery.js"></script>
 		<script src="bower_components/angular/angular.js"></script>
 		<script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -11,57 +67,7 @@
 		<script src="bower_components/angular-resource/angular-resource.js"></script>
 		<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 		<script src="app.js"></script>
-		<script src="Modules/TemplateView/templateView.js"></script>
-		<link rel="stylesheet" href="stylus/main.css">
-		<link rel="stylesheet" href="bower_components\font-awesome\css\font-awesome.min.css"
-	</head>
-	<body>
-
-		<div class="container" ng-controller="templateListCtrl as template">
-
-			<header>
-				<div class="BlenderName">
-					<h1>Mail Blender</h1>
-					<h3>Email building for the masses.</h3>
-			</div>
-			<div class="searchbar-container">
-				<i class="fa fa-search"></i>
-				<input ng-model="searchBox" type="text" placeholder="&#128269; Search" class="searchbar"/>
-			</div>
-			<div class="nav-bar"><button class="add-template" ng-click="open()"><span="nav-text">New Template</span></button></div>
-			</header>
-
-			<div class="container">
-					<section class="templateviewport view-frame" ng-model="templates">
-						<div class="templateview" ng-view ng-repeat="template in templates | filter:searchBox">
-							<div class="templateviewbanner">
-								<h2>{{template.name}}</h2>
-								<span class="white-text">{{template.client}}</span>
-								<span class="white-text">{{template.creator}}</span>
-							</div>
-							<div class="menubanner" id="menu">
-								<button ng-click="menuShow = !menuShow" class="templatemenu">
-									<i class="fa fa-bars"></i>
-								</button>
-									<div ng-click="RemoveShow = !RemoveShow" ng-show="menuShow" class="white-text">
-
-										<span ng-hide='RemoveShow'>Remove</span>
-										<span ng-show='RemoveShow'>Are you sure you want to delete this template?</span>
-
-									</div>
-									<button class="remove-btn" ng-click="remove($index)" ng-show="RemoveShow" class="white-text">Remove</button>
-									<button class="cancel-btn" ng-click="RemoveShow = !RemoveShow" ng-show="RemoveShow" class="white-text">Cancel</button>
-							</div>
-							<img class="template-thumb" ng-src="{{template.imageURL}}">
-						</div>
-					</section>
-
-				<footer>
-
-
-				</footer>
-			</div>
-
-
+		<script src="Modules/templateView/templateView.js"></script>
+		<script src="lib/modules/templateModal/templateModal.js"></script>
 	</body>
 </html>

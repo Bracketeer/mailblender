@@ -28,7 +28,8 @@
     "angular-resource": "1.4.x",
     "angular-route": "1.4.x",
     "bootstrap": "~3.1.1",
-    "ngAnimate": "*"
+    "ngAnimate": "*",
+    "gulp": "~3.9.0"
   },
   "devDependencies": {
     "font-awesome": "~4.4.0"
