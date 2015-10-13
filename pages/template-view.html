@@ -1,0 +1,35 @@
+<!-- Main Content Container -->
+<div class="container-main" ng-controller="templateListCtrl as template">
+
+  <!-- Template Card -->
+  <div class="templateviewport view-frame" ng-model="templates">
+
+
+    <div class="templateview" ng-repeat="template in templates | filter:searchBox">
+          <div class="templateviewbanner">
+            <h2>{{template.name}}</h2>
+            <span>{{template.client}}</span>
+            <span>{{template.creator}}</span>
+          </div>
+
+          <div class="menubanner" id="menu">
+
+            <button ng-click="menuShow = !menuShow" class="templatemenu">
+              <i class="fa fa-bars"></i>
+            </button>
+
+              <div ng-click="RemoveShow = !RemoveShow" ng-show="menuShow" class="white-text">
+
+                <span ng-hide='RemoveShow'>Remove</span>
+                <span ng-show='RemoveShow'>Are you sure you want to delete this template?</span>
+
+              </div>
+
+              <button class="remove-btn" ng-click="remove($index)" ng-show="RemoveShow" class="white-text">Remove</button>
+              <button class="cancel-btn" ng-click="RemoveShow = !RemoveShow" ng-show="RemoveShow" class="white-text">Cancel</button>
+
+          </div>
+          <img class="template-thumb" ng-src="{{template.imageURL}}">
+        </div>
+      </div>
+</div>

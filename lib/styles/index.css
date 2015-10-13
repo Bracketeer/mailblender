@@ -1,11 +1,11 @@
-html,
-body {
+
+.body {
 	padding: 0;
 	margin: 0;
 	font-family: 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-header {
+.header-main {
 	position: fixed;
 	width: 100%;
 

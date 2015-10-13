@@ -1,14 +1,14 @@
-html,
-body {
+.body-main {
   padding: 0;
   margin: 0;
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   color: #404040;
   background-color: #e3e4e8;
 }
-.header {
+.header-main {
   position: fixed;
   width: 100%;
+  height: 120px;
   left: 0;
   top: 0;
   margin-left: 0;
@@ -44,15 +44,15 @@ body {
   width: 225px;
   height: 375px;
   background: #fff;
-  box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.7);
+  box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
   margin: 15px;
+  overflow: hidden;
 }
 .templateviewport {
-  height: 225px;
   display: flex;
   flex-flow: wrap;
+  width: 100%;
   justify-content: left;
-/*align-content: center;*/
 }
 .templateviewbanner {
   width: 225px;
@@ -71,13 +71,11 @@ input {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 200;
-  background: #4a4a4a;
   border: 0;
   color: #fff;
 }
-::-webkit-input-placeholder {
-  color: #fff;
-}
+-webkit-input-placeholder,
+color #fff,
 .templateview h2 {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 16px;
@@ -102,7 +100,8 @@ input {
   font-size: 20px;
   background: none;
   border: 0;
-  -webkit-transition: 0.15s ease-in-out;
+}
+.templatemenu -webkit-transition .15s ease-in-out {
   -moz-transition: 0.15s ease-in-out;
   -o-transition: 0.15s ease-in-out;
   transition: 0.15s ease-in-out;
@@ -118,7 +117,6 @@ input {
   -ms-transform: height 2s ease-in-out, visibility 1s linear;
   transform: height 2s ease-in-out, visibility 1s linear;
   z-index: 2;
-  position: absolute;
 }
 .menubanneropen {
   background: #cc474c;
@@ -128,42 +126,44 @@ input {
 .remove-btn {
   background: none;
   border: 1px solid #fff;
-  margin: 5px;
-  padding: 10px 20px;
+margin5px
+  padding10px: 20px;
   border-radius: 20px;
   color: #fff;
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   font-weight: 200;
   font-size: 16px;
-  -webkit-transition: 0.5s ease-in-out;
+}
+.remove-btn -webkit-transition .5s ease-in-out {
   -moz-transition: 0.5s ease-in-out;
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-.remove-btn:hover {
+.remove-btnhover {
   background: #e3656c;
 }
 .cancel-btn {
   background: none;
   border: 1px solid #fff;
   border-radius: 20px;
-  margin: 5px;
-  padding: 10px 20px;
+margin5px
+  padding10px: 20px;
   color: #e3e4e8;
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   font-weight: 200;
   font-size: 16px;
-  -webkit-transition: 0.5s ease-in-out;
+}
+.cancel-btn -webkit-transition .5s ease-in-out {
   -moz-transition: 0.5s ease-in-out;
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
-.cancel-btn:hover {
+.cancel-btnhover {
   background: #e3656c;
 }
 .searchbar-container {
   width: 300px;
-  height: 70px;
+  height: 50px;
   display: flex;
   align-items: right;
 }
@@ -171,90 +171,105 @@ input {
   border: 0px;
   margin: 10px;
   color: #e3e4e8;
-  padding: 10px 20px;
+  padding10px: 20px;
   border-radius: 20px;
   outline: 0;
   display: flex;
   align-items: center;
 }
-.searchbar::-webkit-input-placeholder {
-  color: #e3e4e8;
-}
+.searchbar-webkit-input-placeholder,
+color $light,
 .template-thumb {
-  width: 225px;
-  height: 300px;
+  width: 100%;
+  height: auto;
   background: #e3e4e8;
 }
 .nav-bar {
   background: #046c60;
   width: 100%;
-  color: #fff;
   padding: 5px 10px;
   box-shadow: inset 0px 4px 0px -2px #505050;
 }
-.add-template {
-  background: none;
-  border: 0;
-  color: #fff;
-  outline: 0;
-}
 .nav-text {
   font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  margin: 5px;
+  padding: 5px;
 }
 /* animate ngRepeat in template listing */
 .templateview.ng-enter,
 .templateview.ng-leave,
-.templateview.ng-move {
-  -webkit-transition: 0.5s ease all;
-  -moz-transition: 0.5s ease all;
-  -o-transition: 0.5s ease all;
-  transition: 0.5s ease all;
-}
-.templateview.ng-enter,
-.templateview.ng-move {
-  opacity: 0;
-  width: 0;
-  overflow: hidden;
-}
+.templateview.ng-move,
+-webkit-transition 0.5s ease all,
+-moz-transition 0.5s ease all,
+-o-transition 0.5s ease all,
+transition 0.5s ease all,
+opacity 0,
+width 0,
+overflow hidden,
 .templateview.ng-move.ng-move-active,
-.templateview.ng-enter.ng-enter-active {
-  opacity: 1;
-  width: 225px;
-}
-.templateview.ng-leave {
-  opacity: 1;
-  overflow: hidden;
+.templateview.ng-enter.ng-enter-active,
+opacity 1,
+width 225px {
   width: 225px;
 }
 .templateview.ng-move.ng-move-active,
-.templateview.ng-leave.ng-leave-active {
-  opacity: 0;
+.templateview.ng-leave.ng-leave-active,
+opacity 0 {
   width: 0;
 }
 /* cross fading between routes with ngView */
-.view-container {
-  position: relative;
-}
-.view-frame.ng-enter,
-.view-frame.ng-leave {
-  background: #fff;
-  position: absolute;
-  top: 25%;
-  left: 0;
-  right: 0;
-width
-}
-.view-frame.ng-move,
-.view-frame.ng-enter {
-  -webkit-animation: 0.5s fade-in;
-  -moz-animation: 0.5s fade-in;
-  -o-animation: 0.5s fade-in;
-  animation: 0.5s fade-in;
-  z-index: 100;
-}
 .view-frame.ng-move,
 .view-frame.ng-enter,
-.view-frame.ng-leave {
+-webkit-animation 0.5s fade-in,
+-moz-animation 0.5s fade-in,
+-o-animation 0.5s fade-in,
+animation 0.5s fade-in,
+z-index 100,
+.view-frame.ng-leave,
+-webkit-animation 0.5s fade-out,
+-moz-animation 0.5s fade-out,
+-o-animation 0.5s fade-out,
+animation 0.5s fade-out {
+  z-index: 99;
+}
+.view-frame.ng-move .view-frame.ng-move,
+.view-frame.ng-enter .view-frame.ng-move,
+-webkit-animation 0.5s fade-in .view-frame.ng-move,
+-moz-animation 0.5s fade-in .view-frame.ng-move,
+-o-animation 0.5s fade-in .view-frame.ng-move,
+animation 0.5s fade-in .view-frame.ng-move,
+z-index 100 .view-frame.ng-move,
+.view-frame.ng-leave .view-frame.ng-move,
+-webkit-animation 0.5s fade-out .view-frame.ng-move,
+-moz-animation 0.5s fade-out .view-frame.ng-move,
+-o-animation 0.5s fade-out .view-frame.ng-move,
+animation 0.5s fade-out .view-frame.ng-move,
+.view-frame.ng-move .view-frame.ng-enter,
+.view-frame.ng-enter .view-frame.ng-enter,
+-webkit-animation 0.5s fade-in .view-frame.ng-enter,
+-moz-animation 0.5s fade-in .view-frame.ng-enter,
+-o-animation 0.5s fade-in .view-frame.ng-enter,
+animation 0.5s fade-in .view-frame.ng-enter,
+z-index 100 .view-frame.ng-enter,
+.view-frame.ng-leave .view-frame.ng-enter,
+-webkit-animation 0.5s fade-out .view-frame.ng-enter,
+-moz-animation 0.5s fade-out .view-frame.ng-enter,
+-o-animation 0.5s fade-out .view-frame.ng-enter,
+animation 0.5s fade-out .view-frame.ng-enter,
+.view-frame.ng-move .view-frame.ng-leave,
+.view-frame.ng-enter .view-frame.ng-leave,
+-webkit-animation 0.5s fade-in .view-frame.ng-leave,
+-moz-animation 0.5s fade-in .view-frame.ng-leave,
+-o-animation 0.5s fade-in .view-frame.ng-leave,
+animation 0.5s fade-in .view-frame.ng-leave,
+z-index 100 .view-frame.ng-leave,
+.view-frame.ng-leave .view-frame.ng-leave,
+-webkit-animation 0.5s fade-out .view-frame.ng-leave,
+-moz-animation 0.5s fade-out .view-frame.ng-leave,
+-o-animation 0.5s fade-out .view-frame.ng-leave,
+animation 0.5s fade-out .view-frame.ng-leave {
   -webkit-animation: 0.5s fade-out;
   -moz-animation: 0.5s fade-out;
   -o-animation: 0.5s fade-out;
