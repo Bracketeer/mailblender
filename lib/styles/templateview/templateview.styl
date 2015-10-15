@@ -1,0 +1,200 @@
+$dark = #404040
+$brand = #505050
+$brand2 = #046c60
+$light = #e3e4e8
+
+.templateview
+	width 225px
+	height 375px
+	background #fff
+	box-shadow 0px 0px 10px 2px alpha(black, 50%)
+	margin 15px
+	overflow hidden
+
+.templateviewport
+	display flex
+	flex-flow wrap
+	width 100%
+	justify-content left
+
+.templateviewbanner
+	width 225px
+	height auto
+	min-height 40px
+	padding-top 5px
+	padding-bottom 5px
+	position relative
+	opacity 1
+	background $brand
+
+.templateview h2
+	font-family 'Helvetica Neue', Helvetica, sans-serif
+	font-size 16px
+	font-weight 200
+	margin 0
+	padding 10px
+	color #FFF
+	text-align left
+
+.templatemenu
+	color #fff
+	outline 0
+	font-size 20px
+	background none
+	border 0
+	-webkit-transition .15s ease-in-out
+	-moz-transition .15s ease-in-out
+	-o-transition .15s ease-in-out
+	transition .15s ease-in-out
+
+.menubanner
+	background darken($brand2, 5%)
+	width 225px
+	height auto
+	overflow hidden
+	-webkit-transform height 2s ease-in-out, visibility 1s linear
+	-moz-transform height 2s ease-in-out, visibility 1s linear
+	-o-transform height 2s ease-in-out, visibility 1s linear
+	-ms-transform height 2s ease-in-out, visibility 1s linear
+	transform height 2s ease-in-out, visibility 1s linear
+	z-index 2
+
+.menubanneropen
+	background #cc474c
+	width 100%
+	max-height 225px
+
+.remove-btn
+	background none
+	border 1px solid #fff
+	margin5px
+	padding10px 20px
+	border-radius 20px
+	color #fff
+	font-family 'Helvetica Neue', Helvetica, sans-serif
+	font-weight 200
+	font-size 16px
+	-webkit-transition .5s ease-in-out
+	-moz-transition .5s ease-in-out
+	-o-transition .5s ease-in-out
+	transition .5s ease-in-out
+
+.remove-btnhover
+	background #e3656c
+
+.cancel-btn
+	background none
+	border 1px solid #fff
+	border-radius 20px
+	margin5px
+	padding10px 20px
+	color $light
+	font-family 'Helvetica Neue', Helvetica, sans-serif
+	font-weight 200
+	font-size 16px
+	-webkit-transition .5s ease-in-out
+	-moz-transition .5s ease-in-out
+	-o-transition .5s ease-in-out
+	transition .5s ease-in-out
+
+.cancel-btnhover
+	background #e3656c
+
+.template-thumb
+	width 100%
+	height auto
+	background $light
+
+.templateview.ng-enter,
+.templateview.ng-leave,
+.templateview.ng-move
+	-webkit-transition 0.5s ease all
+	-moz-transition 0.5s ease all
+	-o-transition 0.5s ease all
+	transition 0.5s ease all
+
+.templateview.ng-enter,
+.templateview.ng-move
+	opacity 0
+	width 0
+	overflow hidden
+
+.templateview.ng-move.ng-move-active,
+.templateview.ng-enter.ng-enter-active
+	opacity 1
+	width 225px
+
+.templateview.ng-leave
+	opacity 1
+	overflow hidden
+	width 225px
+
+.templateview.ng-move.ng-move-active,
+.templateview.ng-leave.ng-leave-active
+	opacity 0
+	width 0
+
+/* cross fading between routes with ngView */
+
+.view-container
+	position relative
+
+.view-frame.ng-enter,
+.view-frame.ng-leave
+	background white
+	position absolute
+	top 25%
+	left 0
+	right 0
+
+.view-frame.ng-move,
+.view-frame.ng-enter
+	-webkit-animation 0.5s fade-in
+	-moz-animation 0.5s fade-in
+	-o-animation 0.5s fade-in
+	animation 0.5s fade-in
+	z-index 100
+
+.view-frame.ng-move,
+.view-frame.ng-enter,
+.view-frame.ng-leave
+	-webkit-animation 0.5s fade-out
+	-moz-animation 0.5s fade-out
+	-o-animation 0.5s fade-out
+	animation 0.5s fade-out
+	z-index 99
+
+.view-frame.ng-move,
+.view-frame.ng-enter,
+.view-frame.ng-leave
+	-webkit-animation 0.5s fade-out
+	-moz-animation 0.5s fade-out
+	-o-animation 0.5s fade-out
+	animation 0.5s fade-out
+	z-index: 99
+
+@keyframes fade-in {
+from { opacity: 0; width: 0; }
+to { opacity: 1; width: 225px; }
+}
+@-moz-keyframes fade-in {
+  from { opacity: 0; width: 0; }
+to { opacity: 1; width: 225px; }
+}
+@-webkit-keyframes fade-in {
+  from { opacity: 0; width: 0; }
+to { opacity: 1; width: 225px; }
+}
+
+@keyframes fade-out {
+  from { opacity: 0; width: 225px; }
+to { opacity: 1; width: 0; }
+}
+@-moz-keyframes fade-out {
+from { opacity: 1; width: 225px; }
+to { opacity: 0; width: 0; }
+}
+@-webkit-keyframes fade-out {
+  from { opacity: 1; width: 225px; }
+to { opacity: 0; width: 0; }
+}

@@ -1,0 +1,57 @@
+.header-main {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  margin-left: 0;
+  text-align: left;
+  background: #3d3d3d;
+  color: #e3e4e8;
+  z-index: 3;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  box-shadow: 0px 3px 5px rgba(0,0,0,0.5);
+}
+.BlenderName h1 {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 40px;
+  font-weight: 100;
+  margin: 0;
+  color: #e3e4e8;
+  padding: 10px 20px;
+}
+.searchbar-container {
+  width: 300px;
+  height: 50px;
+  display: flex;
+  align-items: right;
+  padding: 10px 20px;
+}
+.searchbar {
+  border: 0px;
+  margin: 10px;
+  color: #505050;
+  padding: 10px 20px;
+  border-radius: 20px;
+  outline: 0;
+  display: flex;
+  align-items: center;
+}
+.searchbar-webkit-input-placeholder {
+  color: #e3e4e8;
+}
+.nav-bar {
+  background: #046c60;
+  width: 100%;
+  padding: 5px 10px;
+  height: 20px;
+}
+.nav-text {
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  margin: 5px;
+  padding: 5px;
+  font-weight: 200;
+}

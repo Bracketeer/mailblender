@@ -2,7 +2,7 @@
   "name": "mailblender",
   "productName": "Mailblender",
   "version": "0.0.0",
-  "description": "My polished app",
+  "description": "An app for visually formatting and manipulating html and css for building emails.",
   "license": "MIT",
   "repository": "bracketeer/mailblender",
   "author": {
@@ -24,7 +24,9 @@
     "index.css"
   ],
   "keywords": [
-    "electron-app"
+    "electron-app",
+    "angular",
+    "bootstrap"
   ],
   "dependencies": {
     "angular-modal-service": "^0.6.9",
