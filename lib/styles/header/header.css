@@ -55,3 +55,8 @@
   padding: 5px;
   font-weight: 200;
 }
+.top-margin {
+  height: 105px;
+  width: 100%;
+  display: block;
+}

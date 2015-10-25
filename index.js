@@ -8,6 +8,9 @@ require('crash-reporter').start();
 // adds debug features like hotkeys for triggering dev tools and reload
 require('electron-debug')();
 
+//adds a live reload for easier development
+require('electron-reload')(`file://${__dirname}/lib/styles/templateview/templateview.css`);
+
 // prevent window being GC'd
 let mainWindow;
 

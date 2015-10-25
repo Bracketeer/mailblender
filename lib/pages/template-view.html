@@ -5,7 +5,12 @@
   <div class="templateviewport view-frame" ng-model="templates">
 
 
-    <div class="templateview" ng-repeat="template in templates | filter:searchBox">
+    <div class="templateview"  ng-dblclick="menuShow = !menuShow" ng-repeat="template in templates | filter:searchBox">
+
+      <form name="TempNameForm" ng-submit="add()">
+      									<input id="tempAddName" type="text" ng-show="true" ng-model="templates.name" placeholder="Template Name" />
+      								</form>
+
           <div class="templateviewbanner">
             <h2>{{template.name}}</h2>
             <span>{{template.client}}</span>
@@ -13,10 +18,6 @@
           </div>
 
           <div class="menubanner" id="menu">
-
-            <button ng-click="menuShow = !menuShow" class="templatemenu">
-              <i class="fa fa-bars"></i>
-            </button>
 
               <div ng-click="RemoveShow = !RemoveShow" ng-show="menuShow" class="white-text">
 
